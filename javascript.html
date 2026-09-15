@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+</head>
+<body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <h1 id="titulo">Hola</h1>
+    <ul id="lista"></ul>
+    <button id="btnCambiar">Cambiar texto</button>
+    <br>
+    <button id="btnAgregar">Agregar elemento</button>
+    <br>
+    <button id="btn">Haz clic aquí</button>
+    <h1>Presiona una tecla</h1>
+    <p id="resultado"></p>
+    <form id="formulario">
+    <input id="nombre" type="text" />
+    <br>
+    <button type="submit">Guardar</button>
+    </form>
+<script>
+    const titulo = document.getElementById("titulo");
+    const botoon = document.getElementById("btnCambiar");
+    botoon.addEventListener("click", () => {
+    titulo.textContent = "Texto cambiado con JavaScript";
+    titulo.style.color = "purple";
+    titulo.style.fontSize = "50px";
+    const lista = document.getElementById("lista");
+    const boton = document.getElementById("btnAgregar");
+    boton.addEventListener("click", () => {
+    const li = document.createElement("li"); // crea un nuevo <li>
+    li.textContent = "JavaScript"; // agrega texto al <li>
+    lista.appendChild(li); // inserta el <li> dentro del <ul>
+        const botooon = document.getElementById("btn");
+    botooon.addEventListener("click", () => {
+    console.log("Se hizo clic");
+    alert("¡Botón presionado!");
+    const resultado = document.getElementById("resultado");
+    document.addEventListener("keydown", (evento) => {
+    console.log("Tecla:", evento.key); // se ve en consola
+    alert("Tecla presionada!");
+    resultado.textContent = "Presionaste: " + evento.key; // se ve en la página
+    });
+    const formulario = document.getElementById("formulario");
+    formulario.addEventListener("submit", (evento) => {
+    evento.preventDefault(); // evita que la página se recargue
+    const nombre = document.getElementById("nombre").value; // obtiene el valor del input
+    alert("Dato guardado!");
+    console.log("Nombre:", nombre); // muestra el dato en consola
+});
+});
+});
+});
+    </script>
+</body>
+</html>
